@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MyTokopedia</string>
+    <string name="tittle_home">Home</string>
+    <string name="tittle_promo">Promo</string>
+    <string name="tittle_mall">Mall</string>
+    <string name="tittle_transaksi">Transaksi</string>
+    <string name="tittle_akun">Akun</string>
+    <string name="searchbar_hint">Masukkan kata</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

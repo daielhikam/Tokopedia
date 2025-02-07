@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/tittle_home" />
+
+    <item
+        android:id="@+id/navigation_promo"
+        android:icon="@drawable/ic_promo"
+        android:title="@string/tittle_promo" />
+
+    <item
+        android:id="@+id/navigation_mall"
+        android:icon="@drawable/ic_wishlist"
+        android:title="@string/tittle_mall" />
+
+    <item
+        android:id="@+id/navigation_transaksi"
+        android:icon="@drawable/ic_transaksi"
+        android:title="@string/tittle_transaksi" />
+
+    <item
+        android:id="@+id/navigation_akun"
+        android:icon="@drawable/ic_akun"
+        android:title="@string/tittle_akun" />
+
+</menu>

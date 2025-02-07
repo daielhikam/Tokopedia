@@ -1,0 +1,8 @@
+<resources>
+
+    <!-- Style untuk SearchBar agar berbentuk kotak -->
+    <style name="ShapeAppearance.SearchBarSquare" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">5dp</item>
+    </style>
+</resources>

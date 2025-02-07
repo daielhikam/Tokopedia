@@ -1,0 +1,44 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_margin="8dp">
+
+        <!-- Bulatan Besar -->
+        <FrameLayout
+            android:layout_width="80dp"
+            android:layout_height="80dp">
+
+                <!-- Gambar di dalam bulatan besar -->
+                <ImageView
+                    android:id="@+id/item_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_launcher_background"
+                    android:background="@drawable/rounded_background"
+                    android:clipToOutline="true"/>
+
+                <!-- Bulatan Kecil di dalam bulatan besar -->
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/small_circle"/>
+        </FrameLayout>
+
+        <!-- Tulisan di luar bulatan -->
+        <TextView
+            android:id="@+id/item_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Item Name"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginTop="8dp"/>
+</LinearLayout>
