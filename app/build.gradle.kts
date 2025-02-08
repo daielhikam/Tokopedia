@@ -50,8 +50,11 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
 
     implementation(libs.material)
+    implementation(libs.circleimageview)
+    implementation(libs.glide)
+    implementation(libs.androidx.cardview)
 
-    
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
