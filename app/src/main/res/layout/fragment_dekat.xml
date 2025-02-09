@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Mall.MallFragment">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".tabLayoutHome.FragmentDekat">
 
 
     <androidx.core.widget.NestedScrollView
@@ -28,6 +27,5 @@
                 android:scrollbars="vertical"
                 tools:listitem="@layout/item_list4"/>
         </LinearLayout>
-
     </androidx.core.widget.NestedScrollView>
 </FrameLayout>

@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/navigation_promo"
-        android:name="com.example.mytokopedia.ui.dashboard.PromoFragment"
+        android:name="com.example.mytokopedia.ui.promo.PromoFragment"
 
         tools:layout="@layout/fragment_promo" />
 
     <fragment
         android:id="@+id/navigation_mall"
-        android:name="com.example.mytokopedia.ui.notifications.MallFragment"
+        android:name="com.example.mytokopedia.ui.Mall.MallFragment"
 
         tools:layout="@layout/fragment_mall" />
 

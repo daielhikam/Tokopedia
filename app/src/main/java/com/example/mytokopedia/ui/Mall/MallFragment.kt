@@ -1,4 +1,4 @@
-package com.example.mytokopedia.ui.notifications
+package com.example.mytokopedia.ui.Mall
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -29,10 +29,6 @@ class MallFragment : Fragment() {
         _binding = FragmentMallBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textMall
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
         return root
     }
 

@@ -53,6 +53,7 @@ dependencies {
     implementation(libs.circleimageview)
     implementation(libs.glide)
     implementation(libs.androidx.cardview)
+    implementation(libs.androidx.activity)
 
 
 

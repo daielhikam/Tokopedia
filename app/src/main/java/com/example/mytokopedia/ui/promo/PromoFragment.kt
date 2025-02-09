@@ -1,4 +1,4 @@
-package com.example.mytokopedia.ui.dashboard
+package com.example.mytokopedia.ui.promo
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -22,16 +22,8 @@ class PromoFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this).get(PromoViewModel::class.java)
-
         _binding = FragmentPromoBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-        val textView: TextView = binding.textPromo
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
         return root
     }
 

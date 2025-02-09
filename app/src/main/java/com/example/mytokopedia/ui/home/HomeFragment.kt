@@ -6,15 +6,17 @@ import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mytokopedia.R
+import com.example.mytokopedia.tabLayoutHome.ViewPagerAdapter
 import com.example.mytokopedia.databinding.FragmentHomeBinding
 import com.example.mytokopedia.recycleView1.Item1
 import com.example.mytokopedia.recycleView2.Item2
 import com.example.mytokopedia.recycleView2.ItemAdapter2
+import com.example.mytokopedia.recycleView3.Item3
+import com.example.mytokopedia.recycleView3.ItemAdapter3
+import com.google.android.material.tabs.TabLayoutMediator
 import java.util.concurrent.TimeUnit
 
 class HomeFragment : Fragment() {
@@ -27,26 +29,38 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
-
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        // Dummy Data untuk RecyclerView 1
+        //adapter3
+        val itemList = listOf(
+            Item3(R.drawable.image_lampu, 10, "48.490", "72.690"),
+            Item3(R.drawable.image_baju, 20, "99.900", "125.000"),
+            Item3(R.drawable.image_sepatu, 30, "150.000", "200.000"),
+            Item3(R.drawable.image_kasur, 50, "25.000", "50.000")
+        )
+       val itemAdapter = ItemAdapter3(itemList)
+        binding.recyclerViewFlashSale.apply {
+            layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
+            adapter = itemAdapter
+        }
+
+        // Data untuk RecyclerView 1
         val itemList1 = listOf(
             Item1(R.drawable.ic_gopay, "Rp.0"),
             Item1(R.drawable.ic_kupon, "Cek Kupon"),
             Item1(R.drawable.ic_lok, "Di Kirim Ke Rumah Dai El Hikam")
         )
 
-        // Dummy Data untuk RecyclerView 2 (Item Bulat)
+        // Data untuk RecyclerView 2 (Item Bulat)
         val itemList2 = listOf(
             Item2(R.drawable.ic_keranjang, "Keranjang"),
             Item2(R.drawable.ic_kupon, "Voucher"),
             Item2(R.drawable.ic_lok, "Lokasi"),
             Item2(R.drawable.ic_keranjang, "Keranjang"),
             Item2(R.drawable.ic_kupon, "Voucher"),
-            Item2(R.drawable.ic_lok, "Lokasi"), Item2(R.drawable.ic_keranjang, "Keranjang"),
+            Item2(R.drawable.ic_lok, "Lokasi"),
+            Item2(R.drawable.ic_keranjang, "Keranjang"),
             Item2(R.drawable.ic_kupon, "Voucher"),
             Item2(R.drawable.ic_lok, "Lokasi"),
             Item2(R.drawable.ic_gopay, "Saldo")
@@ -78,11 +92,17 @@ class HomeFragment : Fragment() {
                 val seconds = TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) % 60
                 timerTextView.text = String.format("%02d:%02d:%02d", hours, minutes, seconds)
             }
-
             override fun onFinish() {
                 timerTextView.text = "00:00:00"
             }
         }.start()
+        val adapter = ViewPagerAdapter(this)
+        binding.viewPager.adapter = adapter
+
+        //menambahkan viewPager
+        TabLayoutMediator(binding.tabs, binding.viewPager) { tab, position ->
+            tab.text = adapter.getPageTitle(position)
+        }.attach()
     }
 
     override fun onDestroyView() {

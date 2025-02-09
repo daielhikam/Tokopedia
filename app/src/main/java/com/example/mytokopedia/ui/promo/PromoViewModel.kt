@@ -1,13 +1,13 @@
-package com.example.mytokopedia.ui.notifications
+package com.example.mytokopedia.ui.promo
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class MallViewModel : ViewModel() {
+class PromoViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is mall Fragment"
+        value = "This is promo Fragment"
     }
     val text: LiveData<String> = _text
 }
