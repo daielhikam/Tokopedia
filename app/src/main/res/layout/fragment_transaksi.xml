@@ -1,63 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.FragmentTransaksi">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.search.SearchBar
             android:id="@+id/searchBar"
-            android:layout_width="250dp"
-            android:layout_height="35dp"
-            android:layout_marginHorizontal="16dp"
-            android:hint="@string/searchbar_hint"
-            android:layout_marginLeft="16dp"
-            app:shapeAppearanceOverlay="@style/ShapeAppearance.SearchBarSquare">
-        </com.google.android.material.search.SearchBar>
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:hint="Cari transaksi..."
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.SearchBarSquare" />
 
         <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_pesan" />
 
-            android:layout_width="25sp"
-            android:layout_height="25sp"
-            android:src="@drawable/ic_pesan"
-            android:layout_marginTop="18dp"/>
         <ImageView
-            android:layout_marginLeft="10dp"
-            android:layout_width="25sp"
-            android:layout_height="25sp"
-            android:src="@drawable/ic_notifikasi"
-            android:layout_marginTop="18dp"/>
-        <ImageView
-            android:layout_marginLeft="10dp"
-            android:layout_width="25sp"
-            android:layout_height="25sp"
-            android:src="@drawable/ic_keranjang"
-            android:layout_marginTop="18dp"/>
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_notifikasi" />
 
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_keranjang" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/text_transaksi"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTransaksi"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:text="This is transaksi fragment"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        android:layout_marginBottom="80dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -54,16 +54,16 @@ class HomeFragment : Fragment() {
 
         // Data untuk RecyclerView 2 (Item Bulat)
         val itemList2 = listOf(
-            Item2(R.drawable.ic_keranjang, "Keranjang"),
-            Item2(R.drawable.ic_kupon, "Voucher"),
+            Item2(R.drawable.image_bajuu, "Baju"),
+            Item2(R.drawable.image_hp, "Iphone"),
+            Item2(R.drawable.image_topi, "Topi"),
+            Item2(R.drawable.image_jaket, "Jaket"),
+            Item2(R.drawable.image_lampu, "Lampu"),
+            Item2(R.drawable.image_sepatu, "sepatu"),
+            Item2(R.drawable.ic_kupon, "kupon"),
             Item2(R.drawable.ic_lok, "Lokasi"),
             Item2(R.drawable.ic_keranjang, "Keranjang"),
-            Item2(R.drawable.ic_kupon, "Voucher"),
-            Item2(R.drawable.ic_lok, "Lokasi"),
-            Item2(R.drawable.ic_keranjang, "Keranjang"),
-            Item2(R.drawable.ic_kupon, "Voucher"),
-            Item2(R.drawable.ic_lok, "Lokasi"),
-            Item2(R.drawable.ic_gopay, "Saldo")
+            Item2(R.drawable.ic_gopay, "Gopay")
         )
 
         // Setup RecyclerView 1

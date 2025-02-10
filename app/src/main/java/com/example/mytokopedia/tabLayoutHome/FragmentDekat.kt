@@ -27,7 +27,7 @@ class FragmentDekat : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Dummy Data untuk RecyclerView di FormeFragment
+        //Data untuk RecyclerView di FormeFragment
         val itemList4 = listOf(
 
             Item4(R.drawable.image_kasur,  "Kasur", "Rp50.000", "Rp40.000", "4.8", "50rb+", true, true),

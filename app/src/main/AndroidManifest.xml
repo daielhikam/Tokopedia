@@ -13,7 +13,7 @@
         android:theme="@style/Theme.MyTokopedia"
         tools:targetApi="31">
         <activity
-            android:name=".DetailAdapter4"
+            android:name=".DetailRecycler4"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

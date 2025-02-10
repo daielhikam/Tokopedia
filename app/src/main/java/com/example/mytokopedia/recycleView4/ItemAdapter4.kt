@@ -3,9 +3,8 @@ import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mytokopedia.DetailAdapter4
+import com.example.mytokopedia.DetailRecycler4
 import com.example.mytokopedia.databinding.ItemList4Binding
 import com.example.mytokopedia.recycleView4.Item4
 
@@ -46,14 +45,25 @@ class ItemAdapter4(private val productList: List<Item4>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
         val binding = ItemList4Binding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ProductViewHolder(binding)
+
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        holder.bind(productList[position])
-        holder.itemView.setOnClickListener {
-            val intent = Intent(holder.itemView.context, DetailAdapter4::class.java)
-            holder.itemView.context.startActivity(intent)
+        val product = productList[position] // Tambahkan ini supaya product dikenali
 
+        holder.bind(product)
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, DetailRecycler4::class.java).apply {
+                putExtra("imageRes", product.imageRes)
+                putExtra("namaProduk", product.namaProduk)
+                putExtra("harga", product.harga)
+                putExtra("hargaAsli", product.hargaAsli)
+                putExtra("rating", product.rating)
+                putExtra("stok", product.stok)
+                putExtra("gratisOngkir", product.gratisOngkir)
+                putExtra("cod", product.cod)
+            }
+            holder.itemView.context.startActivity(intent)
         }
     }
 
