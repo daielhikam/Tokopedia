@@ -1,12 +1,10 @@
-package com.example.mytokopedia.ui.promo
+package com.example.mytokopedia.bottomNavigation.promo
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.example.mytokopedia.databinding.FragmentPromoBinding
 
 class PromoFragment : Fragment() {

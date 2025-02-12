@@ -1,10 +1,9 @@
-package com.example.mytokopedia.ui.Mall
+package com.example.mytokopedia.bottomNavigation.Mall
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.mytokopedia.databinding.FragmentMallBinding
@@ -23,9 +22,6 @@ class MallFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
-            ViewModelProvider(this).get(MallViewModel::class.java)
-
         _binding = FragmentMallBinding.inflate(inflater, container, false)
         val root: View = binding.root
 

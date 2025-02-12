@@ -7,7 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mytokopedia.R
 import com.example.mytokopedia.recycleView1.Item1
 
-class ItemAdapter1(private val itemList: List<Item1>) : RecyclerView.Adapter<ItemAdapter1.ItemViewHolder>() {
+class ItemAdapter1(private val itemList: List<Item1>) :
+    RecyclerView.Adapter<ItemAdapter1.ItemViewHolder>() {
 
     class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val imageView: ImageView = view.findViewById(R.id.item_image)

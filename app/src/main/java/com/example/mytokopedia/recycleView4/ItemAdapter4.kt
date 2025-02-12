@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mytokopedia.DetailRecycler4
+import com.example.mytokopedia.recycleView4.DetailRecycler4
 import com.example.mytokopedia.databinding.ItemList4Binding
 import com.example.mytokopedia.recycleView4.Item4
 
@@ -49,7 +49,7 @@ class ItemAdapter4(private val productList: List<Item4>) :
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        val product = productList[position] // Tambahkan ini supaya product dikenali
+        val product = productList[position]
 
         holder.bind(product)
         holder.itemView.setOnClickListener {

@@ -1,4 +1,4 @@
-package com.example.mytokopedia.ui.home
+package com.example.mytokopedia.bottomNavigation.home
 
 import ItemAdapter1
 import android.os.Bundle

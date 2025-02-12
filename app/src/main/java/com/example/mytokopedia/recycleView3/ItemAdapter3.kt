@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mytokopedia.R
 import com.example.mytokopedia.databinding.ItemList3Binding
@@ -26,6 +27,8 @@ class ItemAdapter3(private val itemList: List<Item3>) :
             imgProduk.setImageResource(item.image)
             txtHargaDiskon.text = "Rp${item.hargaDiskon}"
             txtHargaAsli.text = "Rp${item.hargaAsli}"
+
+
 
             // Menambahkan efek coret pada harga asli
             txtHargaAsli.paintFlags = txtHargaAsli.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG

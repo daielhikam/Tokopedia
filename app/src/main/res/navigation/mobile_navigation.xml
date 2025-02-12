@@ -7,31 +7,31 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.mytokopedia.ui.home.HomeFragment"
+        android:name="com.example.mytokopedia.bottomNavigation.home.HomeFragment"
         android:label="@string/tittle_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_promo"
-        android:name="com.example.mytokopedia.ui.promo.PromoFragment"
+        android:name="com.example.mytokopedia.bottomNavigation.promo.PromoFragment"
 
         tools:layout="@layout/fragment_promo" />
 
     <fragment
         android:id="@+id/navigation_mall"
-        android:name="com.example.mytokopedia.ui.Mall.MallFragment"
+        android:name="com.example.mytokopedia.bottomNavigation.Mall.MallFragment"
 
         tools:layout="@layout/fragment_mall" />
 
     <fragment
         android:id="@+id/navigation_transaksi"
-        android:name="com.example.mytokopedia.ui.FragmentTransaksi"
+        android:name="com.example.mytokopedia.bottomNavigation.transaksi.FragmentTransaksi"
 
         tools:layout="@layout/fragment_mall" />
 
     <fragment
         android:id="@+id/navigation_akun"
-        android:name="com.example.mytokopedia.ui.FragmentAkun"
+        android:name="com.example.mytokopedia.bottomNavigation.akun.FragmentAkun"
 
         tools:layout="@layout/fragment_akun" />
 </navigation>
