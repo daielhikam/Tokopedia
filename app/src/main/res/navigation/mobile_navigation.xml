@@ -9,7 +9,11 @@
         android:id="@+id/navigation_home"
         android:name="com.example.mytokopedia.bottomNavigation.home.HomeFragment"
         android:label="@string/tittle_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_fragmentFlash"
+            app:destination="@id/fragmentFlash" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_promo"
@@ -27,11 +31,125 @@
         android:id="@+id/navigation_transaksi"
         android:name="com.example.mytokopedia.bottomNavigation.transaksi.FragmentTransaksi"
 
-        tools:layout="@layout/fragment_mall" />
+        tools:layout="@layout/fragment_mall" >
+        <action
+            android:id="@+id/action_navigation_transaksi_to_detailtransaksi5"
+            app:destination="@id/detailtransaksi5" />
+        <action
+            android:id="@+id/action_navigation_transaksi_to_fragmentKeranjang"
+            app:destination="@id/fragmentKeranjang" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_akun"
         android:name="com.example.mytokopedia.bottomNavigation.akun.FragmentAkun"
 
-        tools:layout="@layout/fragment_akun" />
+        tools:layout="@layout/fragment_akun" >
+        <action
+            android:id="@+id/action_navigation_akun_to_navigation_ulasan2"
+            app:destination="@id/navigation_ulasan" />
+        <action
+            android:id="@+id/action_navigation_akun_to_fragmentBelilagi"
+            app:destination="@id/fragmentBelilagi" />
+        <action
+            android:id="@+id/action_navigation_akun_to_fragmentWhislist"
+            app:destination="@id/fragmentWhislist" />
+        <action
+            android:id="@+id/action_navigation_akun_to_fragmentToko"
+            app:destination="@id/fragmentToko" />
+        <action
+            android:id="@+id/action_navigation_akun_to_fragmentPesanan"
+            app:destination="@id/fragmentPesanan" />
+        <action
+            android:id="@+id/action_navigation_akun_to_fragmentBantuan"
+            app:destination="@id/fragmentBantuan" />
+        <action
+            android:id="@+id/action_navigation_akun_to_fragmentScan"
+            app:destination="@id/fragmentScan" />
+        <action
+            android:id="@+id/action_navigation_akun_to_fragmentAffiliate"
+            app:destination="@id/fragmentAffiliate" />
+        <action
+            android:id="@+id/action_navigation_akun_to_fragmentBukaToko"
+            app:destination="@id/fragmentBukaToko" />
+        <action
+            android:id="@+id/action_navigation_akun_to_fragmentGratisOngkir"
+            app:destination="@id/fragmentGratisOngkir" />
+        <action
+            android:id="@+id/action_navigation_akun_to_settingAkun"
+            app:destination="@id/settingAkun" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_ulasan"
+        android:name="com.example.mytokopedia.bottomNavigation.akun.FragmentUlasan"
+
+        tools:layout="@layout/fragment_ulasan"/>
+    <fragment
+        android:id="@+id/fragmentBelilagi"
+        android:name="com.example.mytokopedia.bottomNavigation.akun.FragmentBelilagi"
+        android:label="fragment_belilagi"
+        tools:layout="@layout/fragment_belilagi" />
+    <fragment
+        android:id="@+id/fragmentWhislist"
+        android:name="com.example.mytokopedia.bottomNavigation.akun.FragmentWhislist"
+        android:label="fragment_whislist"
+        tools:layout="@layout/fragment_whislist" />
+    <fragment
+        android:id="@+id/fragmentToko"
+        android:name="com.example.mytokopedia.bottomNavigation.akun.FragmentToko"
+        android:label="fragment_toko"
+        tools:layout="@layout/fragment_toko" />
+    <fragment
+        android:id="@+id/fragmentPesanan"
+        android:name="com.example.mytokopedia.bottomNavigation.akun.FragmentPesanan"
+        android:label="fragment_pesanan"
+        tools:layout="@layout/fragment_pesanan" />
+    <fragment
+        android:id="@+id/fragmentBantuan"
+        android:name="com.example.mytokopedia.bottomNavigation.akun.FragmentBantuan"
+        android:label="fragment_bantuan"
+        tools:layout="@layout/fragment_bantuan" />
+    <fragment
+        android:id="@+id/fragmentScan"
+        android:name="com.example.mytokopedia.bottomNavigation.akun.FragmentScan"
+        android:label="fragment_scan"
+        tools:layout="@layout/fragment_scan" />
+    <activity
+        android:id="@+id/detailtransaksi5"
+        android:name="com.example.mytokopedia.bottomNavigation.transaksi.Detailtransaksi5"
+        android:label="activity_detailtransaksi"
+        tools:layout="@layout/activity_detailtransaksi" />
+    <fragment
+        android:id="@+id/fragmentKeranjang"
+        android:name="com.example.mytokopedia.activityAsing.FragmentKeranjang"
+        android:label="fragment_keranjang"
+        tools:layout="@layout/fragment_keranjang" />
+    <fragment
+        android:id="@+id/fragmentFlash"
+        android:name="com.example.mytokopedia.activityAsing.FragmentFlash"
+        android:label="fragment_flash"
+        tools:layout="@layout/fragment_flash" />
+    <fragment
+        android:id="@+id/fragmentAffiliate"
+        android:name="com.example.mytokopedia.bottomNavigation.akun.FragmentAffiliate"
+        android:label="fragment_affiliate"
+        tools:layout="@layout/fragment_affiliate" />
+    <fragment
+        android:id="@+id/fragmentBukaToko"
+        android:name="com.example.mytokopedia.bottomNavigation.akun.FragmentBukaToko"
+        android:label="fragment_buka_toko"
+        tools:layout="@layout/fragment_buka_toko" />
+    <fragment
+        android:id="@+id/fragmentGratisOngkir"
+        android:name="com.example.mytokopedia.bottomNavigation.akun.FragmentGratisOngkir"
+        android:label="fragment_gratis_ongkir"
+        tools:layout="@layout/fragment_gratis_ongkir" />
+    <fragment
+        android:id="@+id/settingAkun"
+        android:name="com.example.mytokopedia.bottomNavigation.akun.settingAkun"
+        android:label="fragment_setting_akun"
+        tools:layout="@layout/fragment_setting_akun" />
+
+
 </navigation>

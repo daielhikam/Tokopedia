@@ -8,6 +8,7 @@
     tools:context=".bottomNavigation.home.HomeFragment"
     android:orientation="vertical">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -44,6 +45,8 @@
             android:src="@drawable/ic_keranjang"
             android:layout_marginTop="18dp"/>
     </LinearLayout>
+
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_marginTop="10dp"
@@ -95,10 +98,10 @@
         android:id="@+id/recyclerViewFlashSale"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp"
         android:nestedScrollingEnabled="false"
+        android:padding="8dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        tools:listitem="@layout/item_list3"/>
+        tools:listitem="@layout/item_list3" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
@@ -115,5 +118,8 @@
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
+
+
 
 </LinearLayout>

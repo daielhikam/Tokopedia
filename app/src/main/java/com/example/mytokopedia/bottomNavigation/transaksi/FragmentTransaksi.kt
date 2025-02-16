@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mytokopedia.R
 import com.example.mytokopedia.databinding.FragmentTransaksiBinding
@@ -21,6 +23,8 @@ class FragmentTransaksi : Fragment() {
     ): View {
         _binding = FragmentTransaksiBinding.inflate(inflater, container, false)
         return binding.root
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -49,8 +53,15 @@ class FragmentTransaksi : Fragment() {
         binding.rvtablayoutTransaksi.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
         binding.rvtablayoutTransaksi.adapter = adapter1
 
+        val adapter = ItemAdapter5(transaksiList,
+            onSelesaiClick = { item ->
+                Toast.makeText(requireContext(), "Transaksi Selesai: ${item.namaProduk}", Toast.LENGTH_SHORT).show()
+            },
+            onBeliLagiClick = { item ->
+                findNavController().navigate(R.id.action_navigation_transaksi_to_fragmentKeranjang)
+            }
+        )
 
-        val adapter = ItemAdapter5(transaksiList)
         binding.rvTransaksi.layoutManager = LinearLayoutManager(requireContext())
         binding.rvTransaksi.adapter = adapter
     }
@@ -59,4 +70,5 @@ class FragmentTransaksi : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }

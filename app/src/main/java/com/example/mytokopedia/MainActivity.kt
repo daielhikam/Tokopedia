@@ -35,5 +35,27 @@ class MainActivity : AppCompatActivity() {
             )
         )
         navView.setupWithNavController(navController)
+// Reset fragment ke halaman utama saat berpindah tab
+        navView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_home -> {
+                    navController.popBackStack(R.id.navigation_home, false)
+                }
+                R.id.navigation_promo -> {
+                    navController.popBackStack(R.id.navigation_promo, false)
+                }
+                R.id.navigation_mall -> {
+                    navController.popBackStack(R.id.navigation_mall, false)
+                }
+                R.id.navigation_transaksi -> {
+                    navController.popBackStack(R.id.navigation_transaksi, false)
+                }
+                R.id.navigation_akun -> {
+                    navController.popBackStack(R.id.navigation_akun, false)
+                }
+            }
+            navController.navigate(item.itemId)
+            true
+        }
     }
 }

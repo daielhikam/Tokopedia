@@ -57,11 +57,8 @@ class ItemAdapter4(private val productList: List<Item4>) :
                 putExtra("imageRes", product.imageRes)
                 putExtra("namaProduk", product.namaProduk)
                 putExtra("harga", product.harga)
-                putExtra("hargaAsli", product.hargaAsli)
-                putExtra("rating", product.rating)
-                putExtra("stok", product.stok)
                 putExtra("gratisOngkir", product.gratisOngkir)
-                putExtra("cod", product.cod)
+
             }
             holder.itemView.context.startActivity(intent)
         }

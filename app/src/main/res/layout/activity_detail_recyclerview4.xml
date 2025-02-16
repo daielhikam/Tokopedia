@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/panahdetail4"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_back"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
+    <ImageView
+        android:id="@+id/imgDetail"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginBottom="5dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp">
+        <TextView
+            android:id="@+id/tvDetailHarga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+           android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/tvDetailGratisOngkir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GRATIS ONGKIR"
+            android:textSize="10dp"
+            android:textColor="@android:color/holo_green_dark"
+            android:visibility="gone"
+            android:layout_marginLeft="8dp"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tvDetailNamaProduk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_marginTop="30dp"
+            android:padding="16dp"/>
+    </androidx.cardview.widget.CardView>
+
+    
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GRATIS ONGKIR"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:textColor="#167122"
+            android:layout_marginLeft="16dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rp.11.500"
+                    android:layout_marginStart="8dp"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="200dp"
+                android:src="@drawable/ic_panah"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="Bisa COD * Estimasi tiba 13-15 Feb" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ulasan Pembeli"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lihat Semua"
+                    android:layout_marginLeft="140dp"
+                    android:textStyle="bold"
+                    android:textColor="#14881B"/>
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⭐ 4.9"
+            android:textStyle="bold"
+            android:layout_marginLeft="16dp"/>
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="209 rating.41 ulasan"
+                android:textColor="#636161"
+                android:textSize="12dp"/>
+        </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

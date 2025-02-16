@@ -11,10 +11,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mytokopedia.R
 import com.example.mytokopedia.databinding.ItemList3Binding
 
-class ItemAdapter3(private val itemList: List<Item3>) :
+class ItemAdapter3(private val itemList: List<Item3>,
+    private val onItemClick: (Item3) -> Unit) :
     RecyclerView.Adapter<ItemAdapter3.ViewHolder>() {
 
     class ViewHolder(val binding: ItemList3Binding) : RecyclerView.ViewHolder(binding.root)
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemList3Binding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -23,10 +26,12 @@ class ItemAdapter3(private val itemList: List<Item3>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = itemList[position]
-        with(holder.binding) {
+                with(holder.binding) {
             imgProduk.setImageResource(item.image)
             txtHargaDiskon.text = "Rp${item.hargaDiskon}"
             txtHargaAsli.text = "Rp${item.hargaAsli}"
+
+
 
 
 
@@ -36,14 +41,19 @@ class ItemAdapter3(private val itemList: List<Item3>) :
             // Set gambar diskon sesuai persentase
             imgDiskon.setImageResource(
                 when (item.diskon) {
-                    10 -> R.drawable.ic_diskon
-                    20 -> R.drawable.ic_diskon
-                    30 -> R.drawable.ic_diskon
-                    50 -> R.drawable.ic_diskon
+                    1 -> R.drawable.ic_diskon
+                    2 -> R.drawable.ic_diskon
+                    3 -> R.drawable.ic_diskon
+                    4 -> R.drawable.ic_diskon
                     else -> R.drawable.ic_kupon // Default jika tidak ada diskon spesifik
                 }
             )
+                    imgProduk.setOnClickListener {
+                        onItemClick(item)
+                        Toast.makeText(root.context, "Item ${item.diskon} diklik", Toast.LENGTH_SHORT).show()
+                    }
         }
+
     }
 
     override fun getItemCount(): Int = itemList.size
