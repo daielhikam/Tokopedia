@@ -1,6 +1,5 @@
 package com.example.mytokopedia.tabLayoutHome
 
-
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,35 +7,29 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.mytokopedia.R
 import com.example.mytokopedia.adapter.ItemAdapter4
 import com.example.mytokopedia.data.response.DataItem
-
 import com.example.mytokopedia.data.response.ReadProdukResponse
-import com.example.mytokopedia.data.retrofit.ApiConfig
-import com.example.mytokopedia.databinding.FragmentElektronikBinding
 import com.example.mytokopedia.databinding.FragmentFormeBinding
-import com.example.mytokopedia.databinding.FragmentMallBinding
+import com.example.mytokopedia.data.retrofit.ApiConfig
 import com.example.mytokopedia.databinding.FragmentMallTabBinding
-import com.example.mytokopedia.recycleView4.Item4
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-
-class ElektronikFragment : Fragment() {
+class MallFragmentTab : Fragment() {
     companion object{
-        val TAG = ElektronikFragment::class.java.simpleName
+        val TAG = MallFragmentTab::class.java.simpleName
         val DataItem: MutableList<DataItem> = mutableListOf()
     }
-    private lateinit var binding: FragmentElektronikBinding
+    private lateinit var binding: FragmentMallTabBinding
     private val produkAdapter = ItemAdapter4(DataItem)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentElektronikBinding.inflate(inflater, container, false)
+        binding = FragmentMallTabBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -51,7 +44,7 @@ class ElektronikFragment : Fragment() {
     }
 
     private fun fetchProduk() {
-        ApiConfig.getApiService().getAllElektronikProduk().enqueue(object : Callback<ReadProdukResponse> {
+        ApiConfig.getApiService().getAllMallProduk().enqueue(object : Callback<ReadProdukResponse> {
             override fun onResponse(call: Call<ReadProdukResponse>, response: Response<ReadProdukResponse>) {
                 if (response.isSuccessful) {
                     response.body()?.data?.let {

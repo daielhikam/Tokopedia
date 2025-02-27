@@ -6,9 +6,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.mytokopedia.R
+import com.example.mytokopedia.data.response.DataItemMenu
 
-class ItemAdapter2(private val itemList: List<Item2>) :
+class ItemAdapter2(private val itemList: List<DataItemMenu>) :
     RecyclerView.Adapter<ItemAdapter2.ItemViewHolder>() {
 
     class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -24,8 +26,10 @@ class ItemAdapter2(private val itemList: List<Item2>) :
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = itemList[position]
-        holder.imageView.setImageResource(item.imageResId)
-        holder.textView.text = item.title
+        Glide.with(holder.imageView.context)
+            .load(item.gambarMenu)
+            .into(holder.imageView)
+        holder.textView.text = item.namaMenu
     }
 
     override fun getItemCount() = itemList.size

@@ -6,12 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mytokopedia.R
+import com.example.mytokopedia.data.response.DataTransaksi
+import com.example.mytokopedia.data.response.ReadTransaksiResponse
+import com.example.mytokopedia.data.retrofit.ApiConfig
 import com.example.mytokopedia.databinding.FragmentTransaksiBinding
-import com.example.mytokopedia.recycleView1.Item1
-import com.example.mytokopedia.recycleViewTabTransaksi.AdapterTabTransaksi
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class FragmentTransaksi : Fragment() {
     private var _binding: FragmentTransaksiBinding? = null
@@ -23,45 +26,47 @@ class FragmentTransaksi : Fragment() {
     ): View {
         _binding = FragmentTransaksiBinding.inflate(inflater, container, false)
         return binding.root
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val itemTabList = listOf(
-            Item1(R.drawable.ic_panahbawah, "Semua Status"),
-            Item1(R.drawable.ic_panahbawah, "Semua Produk"),
-            Item1(R.drawable.ic_panahbawah, "Semua Transaksi"),
-        )
+        // Ambil data transaksi dari API
+        getTransaksiData()
+    }
 
-        val transaksiList = listOf(
-            Item5(R.drawable.image_kasur, "Kasur Lipat Portable", "Rp 35.500", "13 Oktoner 2022"),
-            Item5(R.drawable.image_baju, "Kaos Polos Premium", "Rp 75.000", "18 November 2023"),
-            Item5(R.drawable.image_topi, "Topi Baseball Original", "Rp 15.000", "15 Januari 2024"),
-            Item5(R.drawable.image_hp, "Smartphone Samsung A14", "Rp 20.999", "12 Februari 20224"),
-            Item5(R.drawable.image_celana, "Celana Jeans Slim Fit", "Rp 199.000", "1 Juni 2025"),
-            Item5(R.drawable.image_baju, "Hoodie Oversize Hitam", "Rp 250.000", "10 Mei 2025"),
-            Item5(R.drawable.image_jaket, "Jaket Bomber Pria", "Rp 300.000", "11 April 2025"),
-            Item5(R.drawable.image_lampu, "Lampu LED Hemat Energi", "Rp 45.000", "15 Maret 2026"),
-            Item5(R.drawable.image_bajuu, "Kemeja Flanel Kotak", "Rp 180.000", "14 Desember 2027"),
-            Item5(R.drawable.image_sepatu, "Sepatu Sneakers Adidas", "Rp 100.000", "12 Nov 2028")
-        )
+    private fun getTransaksiData() {
+        // Memanggil API
+        ApiConfig.getApiService().getTransaksiData().enqueue(object : Callback<ReadTransaksiResponse> {
+            override fun onResponse(
+                call: Call<ReadTransaksiResponse>,
+                response: Response<ReadTransaksiResponse>
+            ) {
+                if (response.isSuccessful) {
+                    val transaksiList = response.body()?.data ?: emptyList()
+                    // Panggil adapter dan set data ke RecyclerView
+                    setupRecyclerView(transaksiList)
+                } else {
+                    Toast.makeText(requireContext(), "Gagal mendapatkan data", Toast.LENGTH_SHORT).show()
+                }
+            }
 
-        val adapter1 = AdapterTabTransaksi(itemTabList)
-        binding.rvtablayoutTransaksi.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
-        binding.rvtablayoutTransaksi.adapter = adapter1
+            override fun onFailure(call: Call<ReadTransaksiResponse>, t: Throwable) {
+                Toast.makeText(requireContext(), "Error: ${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
 
+    private fun setupRecyclerView(transaksiList: List<DataTransaksi>) {
+        // Set adapter ke RecyclerView
         val adapter = ItemAdapter5(transaksiList,
             onSelesaiClick = { item ->
                 Toast.makeText(requireContext(), "Transaksi Selesai: ${item.namaProduk}", Toast.LENGTH_SHORT).show()
             },
             onBeliLagiClick = { item ->
-                findNavController().navigate(R.id.action_navigation_transaksi_to_fragmentKeranjang)
+                // Aksi ketika tombol "Beli Lagi" diklik
             }
         )
-
         binding.rvTransaksi.layoutManager = LinearLayoutManager(requireContext())
         binding.rvTransaksi.adapter = adapter
     }
@@ -70,5 +75,4 @@ class FragmentTransaksi : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }

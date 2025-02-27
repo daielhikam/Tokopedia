@@ -1,59 +1,65 @@
 package com.example.mytokopedia.tabLayoutHome
 
-import ItemAdapter4
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.mytokopedia.R
-import com.example.mytokopedia.databinding.FragmentElektronikBinding
+import com.example.mytokopedia.adapter.ItemAdapter4
+import com.example.mytokopedia.data.response.DataItem
 import com.example.mytokopedia.databinding.FragmentFormeBinding
-import com.example.mytokopedia.recycleView4.Item4
-
+import com.example.mytokopedia.data.retrofit.ApiConfig
+import com.example.mytokopedia.data.response.ReadProdukResponse
+import com.example.mytokopedia.databinding.FragmentDekatBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class FormeFragment : Fragment() {
+    companion object{
+        val TAG = FormeFragment::class.java.simpleName
+        val DataItem: MutableList<DataItem> = mutableListOf()
+    }
     private lateinit var binding: FragmentFormeBinding
+    private val produkAdapter = ItemAdapter4(DataItem)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-
+    ): View {
         binding = FragmentFormeBinding.inflate(inflater, container, false)
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Data untuk RecyclerView di FormeFragment
-        val itemList4 = listOf(
-            Item4(R.drawable.image_sepatu,  "Sepatu", "Rp50.000", "Rp40.000", "4.8", "50rb+", true, true),
-            Item4(R.drawable.image_kasur,  "Kasur", "Rp50.000", "Rp40.000", "4.8", "50rb+", true, true),
-            Item4(R.drawable.image_jaket,  "Jaket", "Rp50.000", "Rp40.000", "4.8", "50rb+", true, true),
-            Item4(R.drawable.image_topi,  "Topi", "Rp50.000", "Rp40.000", "4.8", "50rb+", true, true),
-            Item4(R.drawable.image_hp, "IPhone", "Rp50.000", "Rp40.000", "4.8", "50rb+", true, true),
-            Item4(R.drawable.image_celana,  "Kasur", "Rp50.000", "Rp40.000", "4.8", "50rb+", true, true),
-            Item4(R.drawable.image_kasur,  "Kasur", "Rp50.000", "Rp40.000", "4.8", "50rb+", true, true),
-            Item4(R.drawable.image_sepatu,  "Sepatu", "Rp50.000", "Rp40.000", "4.8", "50rb+", true, true),
-            Item4(R.drawable.image_baju,  "Baju", "Rp50.000", "Rp40.000", "4.8", "50rb+", true, true),
-            Item4(R.drawable.image_jaket,  "Jaket", "Rp50.000", "Rp40.000", "4.8", "50rb+", true, true),
-            Item4(R.drawable.image_hp,  "IPhone", "Rp50.000", "Rp40.000", "4.8", "50rb+", true, true),
-            Item4(R.drawable.image_baju, "Baju", "Rp50.000", "Rp40.000", "4.8", "50rb+", true, true),
-            Item4(R.drawable.image_celana,  "Celana", "Rp50.000", "Rp40.000", "4.8", "50rb+", true, true),
-            Item4(R.drawable.image_hp,  "IPhone", "Rp50.000", "Rp40.000", "4.8", "50rb+", true, true),
-            Item4(R.drawable.image_topi,  "Topi", "Rp50.000", "Rp40.000", "4.8", "50rb+", true, true),
-            Item4(R.drawable.image_jaket,  "Jaket", "Rp50.000", "Rp40.000", "4.8", "50rb+", true, true),
-            Item4(R.drawable.image_bajuu, "Baju Pria", "Rp50.000", "Rp40.000", "4.8", "50rb+", true, true),
-            Item4(R.drawable.image_lampu,  "Lampu", "Rp50.000", "Rp40.000", "4.8", "50rb+", true, true),
-            Item4(R.drawable.image_baju,  "Baju", "Rp50.000", "Rp40.000", "4.8", "50rb+", true, true),
-            Item4(R.drawable.image_baju,  "Baju Fashion", "Rp120.000", "Rp100.000", "4.7", "20rb+", true, false)
-        )
-
         // Setup RecyclerView
-        binding.recyclerView4.layoutManager = GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL, false)
-        binding.recyclerView4.adapter = ItemAdapter4(itemList4)
+        binding.recyclerView4.layoutManager = GridLayoutManager(requireContext(), 2)
+        binding.recyclerView4.adapter = produkAdapter
+
+        fetchProduk()
+    }
+
+    private fun fetchProduk() {
+        ApiConfig.getApiService().getAllDekatProduk().enqueue(object : Callback<ReadProdukResponse> {
+            override fun onResponse(call: Call<ReadProdukResponse>, response: Response<ReadProdukResponse>) {
+                if (response.isSuccessful) {
+                    response.body()?.data?.let {
+                        DataItem.clear()
+                        DataItem.addAll(it)
+                        produkAdapter.notifyDataSetChanged()
+                    }
+                } else {
+                    Log.e("API_ERROR", "Gagal mengambil data: ${response.message()}")
+                }
+            }
+
+            override fun onFailure(call: Call<ReadProdukResponse>, t: Throwable) {
+                Log.e("API_ERROR", "Error: ${t.message}")
+            }
+        })
     }
 }

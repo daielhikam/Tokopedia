@@ -14,4 +14,5 @@
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.SearchBarSquare</item>
         <!-- Customize your theme here. -->
     </style>
+
 </resources>

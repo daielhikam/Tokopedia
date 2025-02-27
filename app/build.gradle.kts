@@ -57,6 +57,14 @@ dependencies {
     implementation(libs.androidx.cardview)
     implementation(libs.androidx.activity)
 
+    //ViewModel
+    implementation(libs.androidx.lifecycle.viewmodel.ktx.v262)
+    implementation(libs.kotlinx.coroutines.android)
+
+    implementation(libs.retrofit)
+    implementation(libs.retrofit2.converter.gson)
+    implementation(libs.logging.interceptor)
+
 
 
     testImplementation(libs.junit)

@@ -38,6 +38,9 @@
         <action
             android:id="@+id/action_navigation_transaksi_to_fragmentKeranjang"
             app:destination="@id/fragmentKeranjang" />
+        <action
+            android:id="@+id/action_navigation_transaksi_to_rvTransaksiTab"
+            app:destination="@id/rvTransaksiTab" />
     </fragment>
 
     <fragment
@@ -150,6 +153,11 @@
         android:name="com.example.mytokopedia.bottomNavigation.akun.settingAkun"
         android:label="fragment_setting_akun"
         tools:layout="@layout/fragment_setting_akun" />
+    <fragment
+        android:id="@+id/rvTransaksiTab"
+        android:name="com.example.mytokopedia.bottomNavigation.transaksi.DetailRvTransaksiTab"
+        android:label="fragment_rv_transaksi_tab"
+        tools:layout="@layout/fragment_rv_transaksi_tab" />
 
 
 </navigation>

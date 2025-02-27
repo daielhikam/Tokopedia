@@ -40,7 +40,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/tvHarga"
+                android:id="@+id/tvHargaSekarang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rp46.300"
@@ -49,7 +49,7 @@
                 android:textColor="@android:color/holo_red_dark" />
 
             <TextView
-                android:id="@+id/tvHargaAsli"
+                android:id="@+id/tvHargaAwal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rp50.000"

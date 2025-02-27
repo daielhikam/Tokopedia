@@ -7,7 +7,6 @@
     tools:context=".tabLayoutHome.FormeFragment">
 
     <androidx.core.widget.NestedScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
@@ -22,11 +21,13 @@
                 android:id="@+id/recyclerView4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="80dp"
                 android:nestedScrollingEnabled="false"
                 android:scrollbars="vertical"
-                tools:listitem="@layout/item_list4"
-                android:layout_marginBottom="80dp"/>
+                tools:listitem="@layout/item_list4"/>
         </LinearLayout>
-
     </androidx.core.widget.NestedScrollView>
+
+
+
 </FrameLayout>

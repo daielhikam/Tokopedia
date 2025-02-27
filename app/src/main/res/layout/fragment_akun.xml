@@ -83,7 +83,6 @@
             android:id="@+id/circleImageView"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/gojo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -235,113 +234,114 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="10dp">
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingBottom="16dp">
 
-        <TextView
-            android:id="@+id/tvDaftarTransaksi"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:text="Daftar Transaksi"
-            app:layout_constraintStart_toEndOf="@+id/imageDaftarTransaksi"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="horizontal"
+            android:paddingBottom="16dp">
 
-        <TextView
-            android:id="@+id/tvUlasan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:text="Ulasan"
-            app:layout_constraintStart_toEndOf="@+id/imageUlasan"
-            app:layout_constraintTop_toBottomOf="@+id/tvDaftarTransaksi" />
+            <TextView
+                android:id="@+id/tvDaftarTransaksi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:text="Daftar Transaksi"
+                app:layout_constraintStart_toEndOf="@+id/imageDaftarTransaksi"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tvBeliLagi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:text="Beli Lagi"
-            app:layout_constraintStart_toEndOf="@+id/imageBeliLagi"
-            app:layout_constraintTop_toBottomOf="@+id/tvUlasan" />
+            <TextView
+                android:id="@+id/tvUlasan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="Ulasan"
+                app:layout_constraintStart_toEndOf="@+id/imageUlasan"
+                app:layout_constraintTop_toBottomOf="@+id/tvDaftarTransaksi" />
+
+            <TextView
+                android:id="@+id/tvBeliLagi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="Beli Lagi"
+                app:layout_constraintStart_toEndOf="@+id/imageBeliLagi"
+                app:layout_constraintTop_toBottomOf="@+id/tvUlasan" />
 
 
-        <TextView
-            android:id="@+id/tvWishlist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:text="Wishlist"
-            app:layout_constraintStart_toEndOf="@+id/imageWishlist"
-            app:layout_constraintTop_toBottomOf="@+id/tvBeliLagi" />
+            <TextView
+                android:id="@+id/tvWishlist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="Wishlist"
+                app:layout_constraintStart_toEndOf="@+id/imageWishlist"
+                app:layout_constraintTop_toBottomOf="@+id/tvBeliLagi" />
 
-        <TextView
-            android:id="@+id/tvTokoDiFollow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:text="Toko yang Di-follow"
-            app:layout_constraintStart_toEndOf="@+id/imageYgDifolow"
-            app:layout_constraintTop_toBottomOf="@+id/tvWishlist" />
+            <TextView
+                android:id="@+id/tvTokoDiFollow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="Toko yang Di-follow"
+                app:layout_constraintStart_toEndOf="@+id/imageYgDifolow"
+                app:layout_constraintTop_toBottomOf="@+id/tvWishlist" />
 
-        <ImageView
-            android:id="@+id/imageDaftarTransaksi"
-            android:layout_width="19dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/ic_transaksi"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/imageDaftarTransaksi"
+                android:layout_width="19dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_transaksi"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageUlasan"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:src="@drawable/ic_star"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageDaftarTransaksi" />
+            <ImageView
+                android:id="@+id/imageUlasan"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/ic_star"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageDaftarTransaksi" />
 
-        <ImageView
-            android:id="@+id/imageBeliLagi"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:src="@drawable/ic_keranjang"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageUlasan" />
+            <ImageView
+                android:id="@+id/imageBeliLagi"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/ic_keranjang"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageUlasan" />
 
-        <ImageView
-            android:id="@+id/imageWishlist"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:src="@drawable/ic_wishlist"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageBeliLagi" />
+            <ImageView
+                android:id="@+id/imageWishlist"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/ic_wishlist"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageBeliLagi" />
 
-        <ImageView
-            android:id="@+id/imageYgDifolow"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:src="@drawable/ic_toko"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageWishlist" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/imageYgDifolow"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/ic_toko"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageWishlist" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
